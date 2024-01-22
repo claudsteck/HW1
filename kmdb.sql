@@ -104,10 +104,34 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
+DROP TABLE IF EXISTS studio_movies;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS movie_rosters;
 
 -- Create new tables, according to your domain model
--- TODO!
+CREATE TABLE studio_movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    year_released INTEGER,
+    MPAA_rating TEXT,
+    studio TEXT);
+
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    name_name TEXT);
+
+CREATE TABLE characters(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+characters TEXT);
+
+CREATE TABLE movie_rosters (
+    movie_id INTEGER,
+    character_id INTEGER,
+    actor_id INTEGER);
+
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
@@ -130,3 +154,7 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+
+
+
