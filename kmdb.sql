@@ -202,7 +202,11 @@ Where   studio = "Warner Bros.";
 
 
 -- The SQL statement for the cast output
--- TODO!
+SELECT studio_movies.movie_title,actors.first_name,actors.last_name,characters.character_name
+from studio_movies 
+inner join movie_rosters on studio_movies.id = movie_rosters.movie_id
+inner join characters ON characters.id = movie_rosters.character_id
+inner join actors ON actors.id = movie_rosters.actor_id
 
 
 
