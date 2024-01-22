@@ -183,7 +183,6 @@ VALUES ("1","1","1"),
 ("3","9","10"),
 ("3","10","11");
 
-SELECT * from movie_rosters;
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -191,7 +190,9 @@ SELECT * from movie_rosters;
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT movie_title,year_released,MPAA_rating,studio
+from studio_movies
+Where   studio = "Warner Bros.";
 
 -- Prints a header for the cast output
 .print ""
